@@ -64,7 +64,9 @@ jobs:
  
     - name: Download and Extract CUDA Toolkit ${{ matrix.cuda-version }}
       run: |
-        if ("${{ matrix.cuda-version }}" -eq "12.6") {
+        if ("${{ matrix.cuda-version }}" -eq "12.8") {
+          choco install cuda --version=12.8.0.571
+        } elseif ("${{ matrix.cuda-version }}" -eq "12.6") {
           choco install cuda --version=12.6.0.560
         } elseif ("${{ matrix.cuda-version }}" -eq "12.4") {
           choco install cuda --version=12.4.0.551
