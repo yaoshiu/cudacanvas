@@ -244,13 +244,13 @@ jobs:
         run: |
           curl -LO https://github.com/glfw/glfw/releases/download/${GLFW_VERSION}/glfw-${GLFW_VERSION}.zip
           unzip glfw-${GLFW_VERSION}.zip
-          curl -LO https://github.com/Kitware/CMake/releases/download/v3.1.3/cmake-3.1.3-Linux-x86_64.tar.gz
-          tar xzf cmake-3.1.3-Linux-x86_64.tar.gz
-          mv cmake-3.1.3-Linux-x86_64 cmake
+          curl -LO https://github.com/Kitware/CMake/releases/download/v3.31.6/cmake-3.31.6-Linux-x86_64.tar.gz
+          tar xzf cmake-3.31.6-Linux-x86_64.tar.gz
+          mv cmake-3.31.6-Linux-x86_64 cmake
           yum install -y libXinerama-devel libXrandr-devel libXcursor-devel libXi-devel extra-cmake-modules libwayland-client-devel libxkbcommon-devel
-          curl -LO https://wayland.freedesktop.org/releases/wayland-protocols-1.17.tar.xz
-          tar xf wayland-protocols-1.17.tar.xz
-          cd wayland-protocols-1.17
+          curl -LO https://wayland.freedesktop.org/releases/wayland-protocols-1.41.tar.xz
+          tar xf wayland-protocols-1.41.tar.xz
+          cd wayland-protocols-1.41
           ./configure
           make install
           cd ..
