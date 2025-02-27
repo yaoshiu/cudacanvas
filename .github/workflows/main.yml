@@ -251,14 +251,11 @@ jobs:
           tar xzf cmake-3.31.6-linux-x86_64.tar.gz
           mv cmake-3.31.6-linux-x86_64 cmake
           yum install -y libXinerama-devel libXrandr-devel libXcursor-devel libXi-devel extra-cmake-modules libwayland-client-devel libxkbcommon-devel
-          curl -LO https://gitlab.freedesktop.org/wayland/wayland-protocols/-/releases/1.41/downloads/wayland-protocols-1.41.tar.xz
-          tar xf wayland-protocols-1.41.tar.xz
-          cd wayland-protocols-1.41
-          mkdir build &&
-          cd    build &&
-          meson setup --prefix=/usr --buildtype=release &&
-          ninja
-          ninja install
+          curl -LO https://wayland.freedesktop.org/releases/wayland-protocols-1.17.tar.xz
+          tar xf wayland-protocols-1.17.tar.xz
+          cd wayland-protocols-1.17
+          ./configure
+          make install
           cd ..
           mkdir build_x11
           cd build_x11
