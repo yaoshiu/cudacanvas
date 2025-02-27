@@ -238,10 +238,6 @@ jobs:
           
           python -c "import torch; print('torch version:', torch.__version__)"
           python --version
-          
-      - name: Install Meson & Ninja
-        run: |
-          yum install -y meson ninja-build
 
       - name: Install dependencies and build GLFW for X11 and Wayland
         run: |
