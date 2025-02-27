@@ -157,6 +157,10 @@ jobs:
       
       - name: Display date and time
         run: date
+        
+      - name: Install Meson & Ninja
+        run: |
+          yum install -y meson ninja-build
 
       - name: Install Cuda
         run: |
@@ -251,8 +255,9 @@ jobs:
           curl -LO https://gitlab.freedesktop.org/wayland/wayland-protocols/-/releases/1.41/downloads/wayland-protocols-1.41.tar.xz
           tar xf wayland-protocols-1.41.tar.xz
           cd wayland-protocols-1.41
-          ./configure
-          make install
+          meson
+          ninja
+          ninja install
           cd ..
           mkdir build_x11
           cd build_x11
