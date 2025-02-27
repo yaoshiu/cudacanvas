@@ -4,8 +4,8 @@ on:
   workflow_dispatch:
 
 env:
-  GLFW_VERSION: "3.3.9"
-  CUDAPIXELCANVAS_VERSION: "2.6"
+  GLFW_VERSION: "3.4"
+  CUDAPIXELCANVAS_VERSION: "2.7"
   ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION: true
   
 jobs:
@@ -37,9 +37,9 @@ jobs:
     needs: build-tag
     strategy:
       matrix:
-        python-version: ['3.9', '3.10', '3.11']
-        torch-version: ['2.6']
-        cuda-version: ['11.8', '12.4', '12.6']
+        python-version: ['3.13']
+        torch-version: ['2.7']
+        cuda-version: ['12.8']
     steps:
     - uses: actions/checkout@v3
     - name: Set up Python ${{ matrix.python-version }}
@@ -134,9 +134,9 @@ jobs:
     needs: build-tag
     strategy:
       matrix:
-        python-version: ['3.9', '3.10', '3.11']
-        torch-version: ['2.6']
-        cuda-version: ['11.8', '12.4', '12.6']
+        python-version: ['3.13']
+        torch-version: ['2.7']
+        cuda-version: ['12.8']
     steps:
       - uses: actions/checkout@v3
         with:
