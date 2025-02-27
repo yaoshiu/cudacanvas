@@ -254,7 +254,9 @@ jobs:
           curl -LO https://gitlab.freedesktop.org/wayland/wayland-protocols/-/releases/1.41/downloads/wayland-protocols-1.41.tar.xz
           tar xf wayland-protocols-1.41.tar.xz
           cd wayland-protocols-1.41
-          meson
+          mkdir build &&
+          cd    build &&
+          meson setup --prefix=/usr --buildtype=release &&
           ninja
           ninja install
           cd ..
