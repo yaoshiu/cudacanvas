@@ -157,10 +157,6 @@ jobs:
       
       - name: Display date and time
         run: date
-        
-      - name: Install Meson & Ninja
-        run: |
-          yum install -y meson ninja-build
 
       - name: Install Cuda
         run: |
@@ -242,8 +238,11 @@ jobs:
           
           python -c "import torch; print('torch version:', torch.__version__)"
           python --version
-
           
+      - name: Install Meson & Ninja
+        run: |
+          yum install -y meson ninja-build
+
       - name: Install dependencies and build GLFW for X11 and Wayland
         run: |
           curl -LO https://github.com/glfw/glfw/releases/download/${GLFW_VERSION}/glfw-${GLFW_VERSION}.zip
